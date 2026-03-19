@@ -1,25 +1,27 @@
 import random
-
-# Outer loop — controls replay
+ 
+# Stage 1 — Variables & random
 while True:
     secret = random.randint(1, 20)
     print("I'm thinking of a number between 1 and 20...")
-
-    # Inner loop — controls guessing
+ 
+    # Stage 2 – Getting Input — controls guessing
     while True:
         guess = int(input("Your guess: "))
+        
+        # Stage 3 — Conditionals (if/elif/else)
         if guess < secret:
-            print("Higher!")
+            print("Higher!")
         elif guess > secret:
-            print("Lower!")
+            print("Lower!")
         else:
-            print("You got it! 🎉")
-            break
-
-    # Play again?
+            print("You got it! 🎉")
+            break  # exits the inner loop
+ 
+    # Stage 4 - Play again?
     play_again = input("Play again? (yes/no): ")
     if play_again.lower() == "yes":
-        print("Let's go again!")
+        print("Let's go again!")
     else:
-        print("Goodbye 👋")
-        break
+        print("Goodbye 👋")
+        break  # exits the outer loop
