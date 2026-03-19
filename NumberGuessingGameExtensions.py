@@ -20,13 +20,13 @@ while True:
         top = 100
     # Stage 2 - Getting input
     secret = random.randint(1, top)
-    print("I'm thinking of a number between 1 and",top,"...")
+    print(f"I'm thinking of a number between 1 and {top}...")
     count = 0  # new variable to track guesses
     limit = 5  # maximum number of guesses allowed
 
     # Stage 3 — Conditionals (if/elif/else)
     while True:
-        guess = int(input("Your guess: "))
+        guess = int(input(f"Your guess ({count}/{limit}): "))
         count = count + 1  # add 1 every time they guess
 
         if guess < secret:
@@ -34,11 +34,11 @@ while True:
         elif guess > secret:
             print("Lower!")
         else:
-            print("You got it in", count, "guesses! 🎉")
+            print(f"You got it in {count} guesses! 🎉")
             break
 
         if count == limit:  # check if they've used all their guesses
-                print("Out of guesses! The number was", secret)
+                print(f"Out of guesses! The number was {secret}")
                 break
 
     # Stage 4 - Play again?
