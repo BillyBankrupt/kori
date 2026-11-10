@@ -1,27 +1,28 @@
 import random
- 
-# Stage 1 — Variables & random
+
+# Play rounds until the player says no
 while True:
+    # Pick a secret number
     secret = random.randint(1, 20)
     print("I'm thinking of a number between 1 and 20...")
- 
-    # Stage 2 – Getting Input — controls guessing
+
+    # Keep asking until they get it right
     while True:
         guess = int(input("Your guess: "))
-        
-        # Stage 3 — Conditionals (if/elif/else)
+
+        # Check the guess
         if guess < secret:
-            print("Higher!")
+            print("Higher!")
         elif guess > secret:
-            print("Lower!")
+            print("Lower!")
         else:
-            print("You got it! 🎉")
-            break  # exits the inner loop
- 
-    # Stage 4 - Play again?
+            print("You got it! 🎉")
+            break  # leave the guessing loop
+
+    # Play again?
     play_again = input("Play again? (yes/no): ")
     if play_again.lower() == "yes":
-        print("Let's go again!")
+        print("Let's go again!")
     else:
-        print("Goodbye 👋")
-        break  # exits the outer loop
+        print("Goodbye 👋")
+        break  # leave the game loop
