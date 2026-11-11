@@ -5,6 +5,7 @@ while True:
     # Pick a secret number
     secret = random.randint(1, 20)
     print("I'm thinking of a number between 1 and 20...")
+    print(secret) # CHEAT LINE: delete this in Stage 4
 
     # Keep asking until they get it right
     while True:
